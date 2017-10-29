@@ -1,6 +1,6 @@
 # APB4 Multiplexer
-The [AMBA APB v2.0 bus protocol](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0024c/index.html) – commonly referred to as APB4 – defines a low-cost interface that 
-is optimized for minimal power consumption and reduced interface complexity. To enable a single APB4 Master to communicate with *multiple* APB4 Slaves (Peripherals) via a common bus, certain signals require 
+The [AMBA APB v2.0 bus protocol](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0024c/index.html) – commonly referred to as APB4 – defines a low-cost interface that
+is optimized for minimal power consumption and reduced interface complexity. To enable a single APB4 Master to communicate with *multiple* APB4 Slaves (Peripherals) via a common bus, certain signals require
 multiplexing – the Roa Logic APB4 Multiplexer is a fully configurable & parameterized IP to provide this functionality.
 
 
@@ -8,7 +8,7 @@ multiplexing – the Roa Logic APB4 Multiplexer is a fully configurable & parame
 
 ## Documentation
 
-- [Datasheet](DATASHEET)
+- [Datasheet](DATASHEET.md)
   - [PDF Format](docs/APB4-Multiplexer-Datasheet.pdf)
 
 ## Features
@@ -21,7 +21,7 @@ multiplexing – the Roa Logic APB4 Multiplexer is a fully configurable & parame
 
 ## Compatibility
 
-Compatible with  [APB version 2.0 (APB4) protocol ](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0024c/index.html) 
+Compatible with  [APB version 2.0 (APB4) protocol ](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0024c/index.html)
 
 ## Interfaces
 
