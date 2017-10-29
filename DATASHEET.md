@@ -198,9 +198,9 @@ As a consequence, these ports are typically assigned hard-coded values rather th
 
 ## Revision History
 
-| Date        | Rev. | Comments        |
-|:------------|:----:|:----------------|
-| 13-Oct-2017 |  1.0 | Initial Release |
-|             |      |                 |
-|             |      |                 |
-|             |      |                 |
+| Date        | Rev.  | Comments                 |
+|:------------|:------|:-------------------------|
+| 13-Oct-2017 | 1.0   | Initial Release          |
+| 29-Oct-2017 | 1.0.1 | Minor Formatting Updates |
+|             |       |                          |
+|             |       |                          |
