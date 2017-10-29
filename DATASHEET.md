@@ -11,7 +11,7 @@ author: Roa Logic
 -   [Specifications](#specifications)
 -   [Configurations](#configurations)
 -   [Interfaces](#interfaces)
--   [References](#references)
+-   [Resources](#resources)
 -   [Revision History](#revision-history)
 
 ## Introduction
@@ -84,8 +84,8 @@ While the Address Base and Address Mask values may be changed dynamically, assig
 
 The Roa Logic APB4 Multiplexer is a fully configurable interconnect IP to enable an APB4 Master to communicate with multiple APB4 slaves (i.e. peripherals). The core parameters and configuration options are described below.
 
-| Parameter    |   Type  | Default | Description                             |
-|:-------------|:-------:|:-------:|:----------------------------------------|
+| Parameter    |  Type   | Default | Description                             |
+| :----------- | :-----: | :-----: | :-------------------------------------- |
 | `SLAVES`     | Integer |    8    | Number of attached slaves (peripherals) |
 | `PADDR_SIZE` | Integer |    8    | Address Bus Width                       |
 | `PDATA_SIZE` | Integer |    8    | Read Data Bus Width                     |
@@ -109,9 +109,9 @@ The `PDATA_SIZE` parameter specifies the width of the APB4 data bus. This parame
 The following common signals are shared between all devices on the APB4 bus.
 
 | Port      | Size | Direction | Description                   |
-|:----------|:----:|:---------:|:------------------------------|
-| `PRESETn` |   1  |   Input   | Asynchronous active low reset |
-| `PCLK`    |   1  |   Input   | Clock Input                   |
+| :-------- | :--: | :-------: | :---------------------------- |
+| `PRESETn` |  1   |   Input   | Asynchronous active low reset |
+| `PCLK`    |  1   |   Input   | Clock Input                   |
 
 #### PRESETn
 
@@ -126,12 +126,12 @@ When the active low asynchronous `PRESETn` input is asserted (‘0’), the APB4
 The APB4 Interface decodes the signaling of an APB4 bus master and therefore implements a subset of a regular APB4 Slave Interface.
 
 | Port          |     Size     | Direction | Description              |
-|:--------------|:------------:|:---------:|:-------------------------|
-| `MST_PSEL`    |       1      |   Input   | Peripheral Select        |
+| :------------ | :----------: | :-------: | :----------------------- |
+| `MST_PSEL`    |      1       |   Input   | Peripheral Select        |
 | `MST_PADDR`   | `PADDR_SIZE` |   Input   | Address Bus              |
-| `MST_PRDATA`  | `PDATA_SIZE` |   Output  | Read Data Bus            |
-| `MST_PREADY`  |       1      |   Output  | Transfer Ready           |
-| `MST_PSLVERR` |       1      |   Output  | Transfer Error Indicator |
+| `MST_PRDATA`  | `PDATA_SIZE` |  Output   | Read Data Bus            |
+| `MST_PREADY`  |      1       |  Output   | Transfer Ready           |
+| `MST_PSLVERR` |      1       |  Output   | Transfer Error Indicator |
 
 #### MST\_PSEL
 
@@ -162,11 +162,11 @@ The Slave Interface provides the following signals *for each* individual periphe
 > **Note:** Each individual port name is referenced by the index ‘n’, where ‘n’ is an integer value in the range 0 to `SLAVES-1`. E.g. `SLV_PSEL[2]` This nomenclature is used throughout this datasheet
 
 | Port             |     Size     | Direction | Description              |
-|:-----------------|:------------:|:---------:|:-------------------------|
-| `SLV_PSEL[n]`    |       1      |   Output  | Peripheral Select        |
+| :--------------- | :----------: | :-------: | :----------------------- |
+| `SLV_PSEL[n]`    |      1       |  Output   | Peripheral Select        |
 | `SLV_PRDATA[n]`  | `PDATA_SIZE` |   Input   | Read Data Bus            |
-| `SLV_PREADY[n]`  |       1      |   Input   | Transfer Ready Input     |
-| `SLV_PSLVERR[n]` |       1      |   Input   | Transfer Error Indicator |
+| `SLV_PREADY[n]`  |      1       |   Input   | Transfer Ready Input     |
+| `SLV_PSLVERR[n]` |      1       |   Input   | Transfer Error Indicator |
 | `SLV_ADDR[n]`    | `PADDR_SIZE` |   Input   | Transfer Ready Input     |
 | `SLV_MASK[n]`    | `PADDR_SIZE` |   Input   | Transfer Error Indicator |
 
@@ -194,13 +194,19 @@ The bus width must be byte-aligned and is defined by the `PDATA_SIZE` parameter.
 
 As a consequence, these ports are typically assigned hard-coded values rather than connected to other logic in the design.
 
-## References
+## Resources
+
+Below are some example implementations for various platforms. All implementations are push button, no effort has been undertaken to reduce area or improve performance.
+
+| Platform   | DFF  | Logic Cells | Memory | Configuration                            |
+| :--------- | :--: | :---------: | :----: | :--------------------------------------- |
+| Cyclone-IV |  0   |     84      |   0    | `SLAVES=23`,`PADDR_SIZE=16`,`PDATA_SIZE=8` |
 
 ## Revision History
 
-| Date        | Rev.  | Comments                 |
-|:------------|:------|:-------------------------|
-| 13-Oct-2017 | 1.0   | Initial Release          |
-| 29-Oct-2017 | 1.0.1 | Minor Formatting Updates |
-|             |       |                          |
-|             |       |                          |
+| Date        | Rev.  | Comments                      |
+| :---------- | :---- | :---------------------------- |
+| 13-Oct-2017 | 1.0   | Initial Release               |
+| 29-Oct-2017 | 1.0.1 | Minor Formatting Updates      |
+| 30-Oct-2017 | 1.0.2 | Add missing resources section |
+|             |       |                               |
