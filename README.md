@@ -8,7 +8,7 @@ multiplexing – the Roa Logic APB4 Multiplexer is a fully configurable & parame
 
 ## Documentation
 
-- [Datasheet](DATASHEET)
+- [Datasheet](DATASHEET.md)
   - [PDF Format](docs/APB4-Multiplexer-Datasheet.pdf)
 
 ## Features
