@@ -25,8 +25,8 @@ Compatible with  [APB version 2.0 (APB4) protocol ](http://infocenter.arm.com/he
 
 ## Interfaces
 
-- Single APB4 Master Interface
-- User-Define number of APB4 Slave Interfaces
+- Single APB4 Slave Interface (for host connect)
+- User-Defined number of APB4 Master Interfaces (1 per peripheral)
 
 
 ## License
