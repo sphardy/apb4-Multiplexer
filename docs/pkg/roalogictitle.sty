@@ -20,6 +20,24 @@
 \newcommand*{\header}[1]{\gdef\@header{#1}%
 }
 
+\newcommand*{\version}[1]{\gdef\@version{#1}%
+}
+
+\newcommand*{\heading}[1]{\gdef\@heading{#1}%
+}
+
+\appendiargdef{\version}{%
+\begingroup
+\renewcommand{\thanks}[1]{}
+\protected@xdef\theversion{#1}
+\endgroup}
+
+\appendiargdef{\heading}{%
+\begingroup
+\renewcommand{\thanks}[1]{}
+\protected@xdef\theheading{#1}
+\endgroup}
+
 % Overload \maketitle with new layout
 \renewcommand*{\maketitle}{%
 \hypersetup{pageanchor=false}
@@ -32,7 +50,7 @@
 	\centering
 {\huge\bfseries\@title\unskip\strut\par}
 \vspace{1cm}
-{\LARGE\itshape\@doctype\unskip\strut\par}
+{\LARGE\itshape\@doctype\space(v\@version)\unskip\strut\par}
 \vspace{1cm}
 {\scshape\Large\@project\unskip\strut\par}
 \vspace{1cm}
